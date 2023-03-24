@@ -17,10 +17,9 @@ Crud Angular
 <!-- Indice-->
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-como-executar-o-projeto">Executando</a> •
-  <a href="#-utilitários">Utilitários</a> •
- <a href="#-licença">Licença</a>
+ <a href="#-tecnologias">Tecnologias</a> •
+  <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-como-executar-o-projeto">Executando</a> 
 
 
 ## 💻 Sobre o projeto:
