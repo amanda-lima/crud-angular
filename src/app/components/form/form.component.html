@@ -1,0 +1,80 @@
+<div class="container">
+  <h1>Cadastrar novo Usuário</h1>
+
+  <form class="form" [formGroup]="form" (submit)="createUser()">
+    <div class="inputComponent">
+      <input
+        [ngClass]="{ 'error': form.get('name')?.invalid && form.get('name')?.touched }"
+        formControlName="name"
+        name="name"
+        type="text"
+        required
+      />
+      <label for="name">Nome completo (sem abreviações)</label>
+      <div
+        class="error"
+        *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
+        >Nome é necessário</div>
+    </div>
+
+    <div class="inputComponent">
+      <input
+        [ngClass]="{ 'error': form.get('cpf')?.invalid && form.get('cpf')?.touched }"
+        type="text"
+        formControlName="cpf"
+        name="cpf"
+        required
+        [inputMask]="cpfInputMask"
+        pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})"
+      />
+      <label for="cpf">CPF</label>
+      <div
+        class="error"
+        *ngIf="form.get('cpf')?.invalid && form.get('cpf')?.touched"
+      >
+        Digite um CPF no formato: xxx.xxx.xxx-xx
+      </div>
+    </div>
+
+    <div class="inputComponent">
+      <input
+        [ngClass]="{ 'error': form.get('phone')?.invalid && form.get('phone')?.touched }"
+        type="text"
+        formControlName="phone"
+        name="phone"
+        required
+        [inputMask]="phoneInputMask"
+        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{5})-([0-9]{4})"
+      />
+      <label for="phone">Telefone</label>
+      <div
+        class="error"
+        *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+      >
+        Digite um Número no formato: (99) 99999-9999
+      </div>
+    </div>
+
+    <div class="inputComponent">
+      <input
+      [ngClass]="{ 'error': form.get('email')?.invalid && form.get('email')?.touched }"
+        type="email"
+        formControlName="email"
+        required
+      />
+      <label for="email">Email</label>
+      <div
+        class="error"
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+      >
+        Email inválido
+      </div>
+    </div>
+
+    <button type="submit" class="button" [disabled]="form.invalid">
+      <span *ngIf="!loading">Cadastrar</span>
+      <span *ngIf="loading"><img src="../../assets/loading.gif" alt="imagem de loading"></span>
+    </button>
+  </form>
+
+</div>
