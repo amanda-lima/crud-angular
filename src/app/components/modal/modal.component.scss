@@ -1,0 +1,142 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(211, 12%, 48%, 0.212);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        position: relative;
+        border-radius: 25px;
+        width: 500px;
+        height: 500px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .closeButton {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border: none;
+            background-color: transparent;
+            font-size: 1.5rem;
+            color: #000;
+            transition: .3s;
+
+            &:hover {
+                transition: .3s;
+                opacity: 70%;
+                cursor: pointer;
+            }
+        }
+
+        .form {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            .inputComponent {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+    
+                label {
+                    position: absolute;
+                    top: 13px;
+                    left: 10px;
+                    color: gray;
+                    transition: .3s;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+    
+                input:focus+label {
+                    top: -5px;
+                    left: 10px;
+                    font-size: .8rem;
+                }
+    
+                input:valid+label {
+                    top: -5px;
+                    left: 10px;
+                    font-size: .8rem;
+                }
+    
+                input {
+                    border: none;
+                    border-bottom: 1px solid;
+                    padding: 10px;
+                    margin: 5px 0px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    outline: none;
+                }
+    
+                input.error {
+                    border-bottom: 1px solid red;
+                    transition: .3s
+                }
+    
+                div.error {
+                    color: red;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 0.8rem;
+                    transition: .3s
+                }
+
+                input.disabled {
+                    border-bottom: 1px solid #dddcdc;
+                    transition: .3s;
+                    cursor: not-allowed;
+                    color: #dddcdc;
+                    pointer-events: none;
+
+                }
+    
+    
+            };
+            .button {
+                border: none;
+                border-radius: 25px;
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0px;
+                font-size: 1.2rem;
+                background-color: #00c8b3;
+                color: white;
+                transition: .3ms;
+    
+                span img {
+                    width: 20px;
+                    height: 20px;
+                }
+    
+                &:not([disabled]):hover {
+                    transition: 0.3s;
+                    opacity: 70%;
+                    cursor:pointer
+                };
+    
+                &:disabled {
+                    background-color: #f6f6f6;
+                    color: #dddcdc;
+                    transition: .3s
+                };
+    
+            }
+        }
+    }
+
+}
