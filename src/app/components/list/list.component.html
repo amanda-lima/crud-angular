@@ -1,0 +1,39 @@
+<div class="container">
+      <h2>Lista de usuários</h2>
+
+  <table class="table">
+    <thead class="tableHeader">
+      <tr class="header">
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody class="tableContentWrapper">
+      <tr class="tableContent" *ngFor="let user of users">
+        <td >{{ user.name }}</td>
+        <td>{{ user.cpf | CPF }}</td>
+        <td>{{ user.phone | phone }}</td>
+        <td>{{ user.email }}</td>
+        <td class="actionButtons">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary"
+            (click)="openModal(user)"
+          >
+          <i class="far fa-edit"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-danger"
+            (click)="deleteUser(user)"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
