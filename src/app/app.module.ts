@@ -13,23 +13,9 @@ import { PhonePipe } from './utils/phonePipe/phone.pipe';
 import { InputMaskModule } from '@ngneat/input-mask';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormComponent,
-    ListComponent,
-    ModalComponent,
-    CPFPipe,
-    PhonePipe,
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    InputMaskModule
- ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, FormComponent, ListComponent, ModalComponent, CPFPipe, PhonePipe],
+	imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule, FormsModule, InputMaskModule],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
