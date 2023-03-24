@@ -1,22 +1,20 @@
 <div class="container">
-  <div class="contentWrapper">
-    <div class="buttonsContainer">
-      <button [ngClass]="{ selected: isViewing }" (click)="changeView(true)">
-        Usuários cadastrados
-      </button>
-      <button [ngClass]="{ selected: !isViewing }" (click)="changeView(false)">
-        Cadastrar novo Usuário
-      </button>
-    </div>
-    <div class="contentContainer">
-      <div *ngIf="!isViewing">
-        <app-form></app-form>
-      </div>
-      <div *ngIf="isViewing && editingService.getEditingStatus() === 'false' && userService.getLocalStorageUsers()">
-        <app-list></app-list>
-      </div>
-    </div>
+	<div class="contentWrapper">
+		<div class="buttonsContainer">
+			<button [ngClass]="{ selected: isViewing }" (click)="changeView(true)">Usuários cadastrados</button>
+			<button [ngClass]="{ selected: !isViewing }" (click)="changeView(false)">Cadastrar novo Usuário</button>
+		</div>
+		<div class="contentContainer">
+			<div *ngIf="!isViewing">
+				<app-form></app-form>
+			</div>
+			<div
+				*ngIf="isViewing && editingService.getEditingStatus() === 'false' && userService.getLocalStorageUsers()"
+			>
+				<app-list></app-list>
+			</div>
+		</div>
 
-    <app-modal *ngIf="editingService.getEditingStatus() === 'true'"></app-modal>
-  </div>
+		<app-modal *ngIf="editingService.getEditingStatus() === 'true'"></app-modal>
+	</div>
 </div>
